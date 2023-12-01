@@ -7,6 +7,7 @@ import { HeartIcon } from 'react-native-heroicons/solid'
 import { styles } from '../theme'
 
 import { Shadow } from 'react-native-shadow-2'
+import MovieList from '../components/MovieList'
 
 
 const verticalMargin = ' my-3'
@@ -15,6 +16,7 @@ var {width, height} = Dimensions.get('window')
 export default function PersonScreen() {
     const navigation = useNavigation()
     const [isFavourite, toggleFavourite] = useState(false)
+    const [personMovies, setPersonMovies] = useState([1,2,3,4,5])
 
     return (
         <ScrollView className="flex-1 bg-neutral-900"  contentContainerStyle={{paddingBottom: 20}}>
@@ -44,6 +46,7 @@ export default function PersonScreen() {
                         </Shadow>
                     </View>
                 </View>
+
                 <View className="mt-6">
                     <Text className="text-3xl text-white font-bold text-center">
                         Keanu Reeves
@@ -53,6 +56,46 @@ export default function PersonScreen() {
                         London, United Kingdom
                     </Text>
                 </View>
+
+                <View className="mx-3 p-3 mt-6 flex-row justify-between items-center bg-neutral-700 rounded-full ">
+                    <View className="border-r-2 border-r-neutral-400 px-2 items-center">
+                        <Text className="text-white font-semibold ">Gender</Text>
+                        <Text className="text-neutral-300 text-sm">
+                            Male
+                        </Text>
+                    </View>
+
+                    <View className="border-r-2 border-r-neutral-400 px-2 items-center">
+                        <Text className="text-white font-semibold ">Birthday</Text>
+                        <Text className="text-neutral-300 text-sm">
+                            1964-09-02
+                        </Text>
+                    </View>
+
+                    <View className="border-r-2 border-r-neutral-400 px-2 items-center">
+                        <Text className="text-white font-semibold ">known for</Text>
+                        <Text className="text-neutral-300 text-sm">
+                            Acting
+                        </Text>
+                    </View>
+
+                    <View className="px-2 items-center">
+                        <Text className="text-white font-semibold">Popularity</Text>
+                        <Text className="text-neutral-300 text-sm">
+                            84.23 % 
+                        </Text>
+                    </View>
+                </View>
+                <View className="my-6 mx-4 space-y-2">
+                    <Text className="text-white text-lg">Biography</Text>
+                    <Text className="text-neutral-400 tracking-wide">
+                    Keanu Charles Reeves, a Canadian-American actor, is best known for his portrayal as Neo in the action film series The Matrix, Ted Logan in Bill & Ted's Excellent Adventure and Bill & Ted's Bogus Journey, and Officer Jack Traven in Speed. Other notable roles include those of Siddhartha Gautama in Little Buddha, Scott Favor opposite River Phoenix in the drama My Own Private Idaho, Johnny Mnemonic opposite Dolph Lundgren in a science fiction film, Kevin Lomax's complete reverse Al Pacino in the psychological drama The Devil's Advocate, the chevalier Danceny in Dangerous Liaisons, as well as the lead roles in Chain Reaction, Constantine, and the epic surf drama Point Break.
+                    </Text>
+                </View>
+
+
+                {/* person movies */}
+                <MovieList title="Movies" hideSeeAll={true} data={personMovies} />
             </View>
         </ScrollView>
     )
