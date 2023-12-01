@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 //Screens imports
 import HomeScreen from '../screens/HomeScreen'
+import MovieScreen from '../screens/MovieScreen'
 
 
 const Stack = createNativeStackNavigator()
@@ -13,6 +14,7 @@ const appNavigation = () => {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name='Home' options={{ headerShown: false }} component={HomeScreen} />
+                <Stack.Screen name='Movie' options={{ headerShown: false }} component={MovieScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
