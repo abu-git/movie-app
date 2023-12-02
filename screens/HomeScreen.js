@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import {Bars3CenterLeftIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline'
 import { styles } from '../theme'
 
@@ -13,6 +14,8 @@ const HomeScreen = () => {
     const [upcoming, setUpcoming] = useState([1,2,3])
     const [topRated, setTopRated] = useState([1,2,3])
 
+    const navigation = useNavigation()
+
     return (
         <View className="flex-1 bg-neutral-800">
             {/* searchbar and logo */}
@@ -23,7 +26,7 @@ const HomeScreen = () => {
                     <Text className="text-white text-3xl font-bold">
                         <Text style={styles.text}>M</Text>ovies
                     </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                         <MagnifyingGlassIcon size="30" strokeWidth={2} color="white" />
                     </TouchableOpacity>
                 </View>

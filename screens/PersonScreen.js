@@ -16,7 +16,7 @@ var {width, height} = Dimensions.get('window')
 export default function PersonScreen() {
     const navigation = useNavigation()
     const [isFavourite, toggleFavourite] = useState(false)
-    const [personMovies, setPersonMovies] = useState([1,2,3,4,5])
+    const [personMovies, setPersonMovies] = useState([1,2,3,4])
 
     return (
         <ScrollView className="flex-1 bg-neutral-900"  contentContainerStyle={{paddingBottom: 20}}>
